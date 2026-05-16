@@ -1,0 +1,7 @@
+switch(y){
+case 2:
+printf("mundo");
+break;
+default:
+printf("otro");
+}
