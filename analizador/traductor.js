@@ -1,6 +1,8 @@
 const fs = require('fs');
 
-const codigo = fs.readFileSync('ejemplo_correcto_1.txt', 'utf8');
+let codigo = fs.readFileSync('ejemplo_correcto_1.txt', 'utf8');
+
+codigo = "let x = 1;\n" + codigo;
 
 console.log("=== CODIGO ORIGINAL ===");
 console.log(codigo);
