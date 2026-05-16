@@ -1,0 +1,72 @@
+programa: instrucciones;
+
+instrucciones:
+    instrucción
+    | instrucciones instrucción
+    ;
+
+instruccion: seleccion;
+
+seleccion:
+    "switch" "(" identificador ")" "{" casos "}"
+    ;
+
+casos:
+    caso
+    | casos caso
+    ;
+
+caso:
+    "case" numero ":" sentencia
+    | "default" ":" sentencia
+    ;
+
+sentencia:
+    salida
+    | salida sentencia
+    | terminar
+    ;
+
+salida:
+    "printf" "(" cadena ")" ";"
+    ;
+
+terminar:
+    "break" ";"
+    ;
+
+identificador:
+    letra { letra | digito }*
+    ;
+
+numero:
+    { digito }+
+    ;
+
+cadena:
+    "\"" caracteres "\""
+    ;
+
+caracteres:
+    carácter
+    | caracteres carácter
+    ;
+
+carácter:
+    letra
+    | digito
+    | símbolo
+    ;
+
+letra:
+    "a" ... "z"
+    | "A" ... "Z"
+    ;
+
+digito:
+    "0" ... "9"
+    ;
+
+simbolo:
+    "." | "," | "!" | "?" | ":" | ";" | " "
+    ;
